@@ -1,0 +1,143 @@
+erDiagram
+    %% Énoncé 1 - Entreprise
+    DIVISION {
+        int DIVNUM PK
+        string DIVNOM
+        string DIVADR
+        float DIVCA
+    }
+    SALARIE {
+        int SALNUM PK
+        string SALNOM
+        string SALPRE
+        string SALFON
+        float SALREM
+        float SALCOM
+    }
+    EQUIPE {
+        int EQUNUM PK
+        string EQUSPE
+        int EQUNBR
+    }
+    PROJET {
+        int PRONUM PK
+        string PROLIB
+        string PROTHE
+        date PRODEB
+        date PROFIN
+        date PROECH
+    }
+    TACHE {
+        string TACNOM
+        float TACCOU
+    }
+    MATERIEL {
+        int MATNUM PK
+        string MATNOM
+        string MATTYP
+        string REFCON
+    }
+    CLIENT {
+        int CLINUM PK
+        string CLINOM
+        string CLIRAI
+        string CLIADR
+        string CLITEL
+        string CLIFAX
+        string CLICON
+        string CLIACT
+    }
+
+    DIVISION ||--o{ SALARIE : emploie
+    SALARIE ||--o{ EQUIPE : appartient
+    SALARIE ||--o{ SALARIE : encadre
+    SALARIE ||--o{ PROJET : coordonne
+    PROJET ||--|{ TACHE : contient
+    PROJET }|--|| CLIENT : est_realise_pour
+    SALARIE }o--o{ TACHE : participe
+    MATERIEL ||--o{ MATERIEL : compose
+    SALARIE }o--o{ MATERIEL : utilise
+
+    %% Énoncé 2 - Courses de chevaux
+    TYPE_COURSE {
+        string code PK
+        string libelle
+    }
+    COURSE {
+        int numero PK
+        date date
+        float dotation
+    }
+    CHAMP_COURSES {
+        string code PK
+        string nom
+        string adresse
+    }
+    CATEGORIE_COURSE {
+        string code PK
+        string libelle
+    }
+    PROPRIETAIRE {
+        int numero PK
+        string nom
+        string adresse
+    }
+    CHEVAL {
+        string nom PK
+        string sexe
+        date date_naissance
+    }
+    JOCKEY {
+        string nom PK
+    }
+    PARTICIPATION {
+        int dossard
+    }
+
+    TYPE_COURSE ||--o{ COURSE : appartient
+    CATEGORIE_COURSE ||--o{ COURSE : categorise
+    CHAMP_COURSES ||--o{ COURSE : accueille
+    PROPRIETAIRE ||--o{ CHEVAL : possede
+    COURSE }o--o{ CHEVAL : participe
+    CHEVAL }o--o{ JOCKEY : est_monte_par
+
+    %% Énoncé 3 - Formation
+    STAGIAIRE {
+        int numero PK
+        string nom
+        string prenom
+        date date_naissance
+        string entreprise
+    }
+    STAGE {
+        int numero PK
+        string intitule
+        string libelle
+        string prerequis
+    }
+    SESSION {
+        int numero PK
+        date date_debut
+        date date_fin
+    }
+    MODULE {
+        int code PK
+        string libelle
+    }
+    PROFESSEUR {
+        int id PK
+        string nom
+        string type
+    }
+    INSCRIPTION {
+        date date_inscription
+    }
+
+    STAGIAIRE }o--o{ SESSION : s_inscrit
+    STAGE ||--|{ SESSION : organise
+    MODULE }o--o{ STAGE : compose
+    PROFESSEUR }o--o{ MODULE : enseigne
+    PROFESSEUR ||--o{ MODULE : responsable
+    PROFESSEUR ||--o{ STAGE : responsable
+    SESSION }o--o{ MODULE : contient
+    PROFESSEUR }o--o{ SESSION : intervient
