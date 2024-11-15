@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "grade": 85,
+        "courses": [
+            "Math",
+            "Physics"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "grade": 92,
+        "courses": [
+            "Chemistry",
+            "Biology"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Bob Wilson",
+        "grade": 78,
+        "courses": [
+            "Physics",
+            "Math"
+        ]
+    },
+    {
+        "id": "004",
+        "name": "Alice Johnson",
+        "grade": 88,
+        "courses": [
+            "English",
+            "History"
+        ]
+    }
+]
