@@ -1,0 +1,51 @@
+Basic Data Information:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 5 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   brand        1000 non-null   object 
+ 1   age          1000 non-null   int64  
+ 2   mileage      1000 non-null   float64
+ 3   engine_size  1000 non-null   float64
+ 4   price        1000 non-null   float64
+dtypes: float64(3), int64(1), object(1)
+memory usage: 39.2+ KB
+None
+
+Basic Statistics:
+               age        mileage  engine_size         price
+count  1000.000000    1000.000000  1000.000000   1000.000000
+mean      9.452000   50981.669186     2.068400  22609.675681
+std       5.608132   20503.166277     0.531417  10495.039785
+min       0.000000  -16222.399912     1.400000   5000.000000
+25%       5.000000   36883.384675     1.600000  14026.729098
+50%       9.000000   51793.186536     2.000000  21770.760526
+75%      14.000000   65063.866067     2.400000  30226.282243
+max      19.000000  129748.149787     3.000000  51659.828331
+
+Missing Values:
+brand          0
+age            0
+mileage        0
+engine_size    0
+price          0
+dtype: int64
+
+Model Performance Metrics:
+R² Score: 0.9573
+MSE: 4659085.46
+RMSE: 2158.49
+
+Feature Importance:
+          Feature   Coefficient
+6  brand_Mercedes  12813.819793
+3       brand_BMW   7876.738870
+4      brand_Ford  -7725.298793
+7    brand_Toyota  -7032.216411
+5     brand_Honda  -5933.043460
+2     engine_size   4808.872030
+0             age   -979.952188
+1         mileage     -0.097286
+
+Predicted price for sample car: $20,468.83
