@@ -1,0 +1,45 @@
+  State  Account length  ...  Customer service calls  Churn
+0    LA             117  ...                       1  False
+1    IN              65  ...                       4   True
+2    NY             161  ...                       4   True
+3    SC             111  ...                       2  False
+4    HI              49  ...                       1  False
+
+[5 rows x 20 columns]
+The dataset has 667 rows and 20 columns.
+State                     0
+Account length            0
+Area code                 0
+International plan        0
+Voice mail plan           0
+Number vmail messages     0
+Total day minutes         0
+Total day calls           0
+Total day charge          0
+Total eve minutes         0
+Total eve calls           0
+Total eve charge          0
+Total night minutes       0
+Total night calls         0
+Total night charge        0
+Total intl minutes        0
+Total intl calls          0
+Total intl charge         0
+Customer service calls    0
+Churn                     0
+dtype: int64
+       Account length   Area code  ...  Total intl charge  Customer service calls
+count      667.000000  667.000000  ...         667.000000              667.000000
+mean       102.841079  436.157421  ...           2.764948                1.563718
+std         40.819480   41.783305  ...           0.758167                1.333357
+min          1.000000  408.000000  ...           0.000000                0.000000
+25%         76.000000  408.000000  ...           2.320000                1.000000
+50%        102.000000  415.000000  ...           2.840000                1.000000
+75%        128.000000  415.000000  ...           3.255000                2.000000
+max        232.000000  510.000000  ...           4.940000                8.000000
+
+[8 rows x 16 columns]
+Churn
+False    572
+True      95
+Name: count, dtype: int64
